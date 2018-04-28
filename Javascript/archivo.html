@@ -4,9 +4,11 @@
 		<script type="text/javascript">
 			var edad = prompt('Cuantos anios tienes?');
 			if(edad<18){
-				document.write('Eres menor de edad');
+				alert('Eres menor de edad');
+			}else if(edad>=18 && edad <=30){
+				alert('Eres un adulto joven');
 			}else{
-				document.write('Eres mayor de edad');
+				alert('Eres un adulto maduro');
 			}
 		</script>
 	</head>
