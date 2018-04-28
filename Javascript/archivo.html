@@ -2,16 +2,14 @@
 	<head>
 		<title>Javascript</title>
 		<script type="text/javascript">
-			for(var i=1; i<=100; i = i+1){
-				var valor = prompt("pregunta"+i+ " \nCuantos valores deseas saltarte?");
-
-				if(valor>(100-i)){
-					break;
-				}else{
-					i = i + (valor-1	);
-					continue;
-				}
+			function prueba(x,y){
+				z = x+y;
+				return z;
 			}
+
+		
+
+			alert("Suma "+prueba(2,5));
 
 		</script>
 	</head>
