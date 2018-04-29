@@ -3,14 +3,16 @@
 		<title>Javascript</title>
 		<script type="text/javascript">
 
-			var x = 'Mi nombre es Mario';
-			document.write(x.match('Mario'));
-
-
+			function prueba() {
+				alert('Trabaja perfectamente');
+			}
 		</script>
 	</head>
 
 	<body>
+		<form>
+			<input type="button" name="submit" value="Boton" onclick="prueba()" onmouseenter="alert('Dentro del boton')" onmouseout="alert('Se sale el cursor')">
+		</form>
 
 	</body>
 
