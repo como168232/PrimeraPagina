@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Formulario</title>
+		<script type="text/javascript">
+			function registrar() {
+				var x = new Array();
+				x[0] = document.getElementById('name').value;
+				x[1] = document.getElementById('lname').value;
+				x[2] = document.getElementById('email').value;
+				x[3] = document.getElementById('password').value;
+				x[4] = document.getElementById('rpassword').value;
+
+				var h = new Array();
+				h[0] = "<span style='color : red'>Escribe tu Nombre</span>";
+				h[1] = "<span style='color : red'>Escribe tu Apellido</span>"
+				h[2] = "<span style='color : red'>Escribe tu E-Mail</span>"
+				h[3] = "<span style='color : red'>Escribe tu Contraseña</span>"
+				h[4] = "<span style='color : red'>Confirma tu Contraseña</span>"
+
+				var divs = new Array("mname","mlname","memail","mpassword","mrpassword");
+				for(i in x){
+					var error = h[i];
+					var div = divs[i];
+					if(x[i]==""){
+						document.getElementById(div).innerHTML = error;
+					}else{
+						document.getElementById(div).innerHTML = "Correcto";
+					}
+				}
+
+			}
+
+			function checkPassword(){
+				
+				var pass = document.getElementById('password').value;
+				var rPass = document.getElementById('rpassword').value;
+				if(pass != rPass){
+					document.getElementById('mrpassword').innerHTML = "<span style='color : red '>Tu contraseña no coincide</span>";
+				}else{
+					document.getElementById('mrpassword').innerHTML = "<span style='color : black '>Correcto</span>";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<table border="1">
+				<tr><td>Nombre: </td><td><input type="text" name="name" id="name" onkeyup="registrar()" /></td><td><div id = "mname"></div></td></tr>
+				<tr><td>Apellido: </td><td><input type="text" name="lname" id="lname" onkeyup="registrar()" /></td><td><div id = "mlname"></div></td></tr>
+				<tr><td>E-Mail: </td><td><input type="text" name="email" id="email" onkeyup="registrar()" /></td><td><div id = "memail"></div></td></tr>
+				<tr><td>Contraseña: </td><td><input type="password" name="password" id="password" onkeyup="registrar()" /></td><td><div id = "mpassword"></div></td></tr>
+				<tr><td>Repetir Contraseña: </td><td><input type="password" name="rpassword" id="rpassword" onkeyup="checkPassword()" /></td><td><div id = "mrpassword"></div></td></tr>
+			</table>
+			<input type="button" name="submit" value="submit" onclick="registrar()" />
+		</form>
+	</body>
+</html>

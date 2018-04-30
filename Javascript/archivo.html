@@ -2,10 +2,16 @@
 	<head>
 		<title>Javascript</title>
 		<script type="text/javascript">
-			
+			var num1 = prompt("Ingresa primer numero");
+			var num2 = prompt("Ingresa segundo numero");
 
-			miHeroe = {nombre: 'Mario', especie: 'humano',fuerza:10000};
-			document.write('El nombre del heroe es: '+miHeroe.nombre+'<br />Es de la especie '+miHeroe.especie+'<br />Su fuerza es de '+miHeroe.fuerza+' chitauri <br />');
+			function Calculadora(){
+				this.multiplicacion = function(valor1,valor2){
+					return (valor1*valor2);
+				}
+			}
+			var calc = new Calculadora();
+			alert("El resultado es: "+calc.multiplicacion(num1,num2));
 		</script>
 	</head>
 
